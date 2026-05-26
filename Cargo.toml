@@ -1,0 +1,26 @@
+[workspace]
+
+[package]
+name = "mcp-medical"
+version = "1.0.0"
+edition = "2024"
+description = "Clinical reference and global health intelligence MCP server — PubMed, WHO GHO, health statistics, medical literature"
+license = "Apache-2.0"
+repository = "https://github.com/zavora-ai/mcp-medical"
+keywords = ["mcp", "medical", "pubmed", "who", "health"]
+categories = ["science", "api-bindings"]
+
+[features]
+default = ["pubmed", "who-gho"]
+pubmed = []
+who-gho = []
+all-backends = ["pubmed", "who-gho"]
+
+[dependencies]
+adk-mcp-sdk = "0.1"
+rmcp = { version = "1.7", features = ["server", "transport-io", "macros"] }
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.12", features = ["json"] }
+anyhow = "1"
