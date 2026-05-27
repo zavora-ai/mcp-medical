@@ -2,7 +2,7 @@
 
 [package]
 name = "mcp-medical"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2024"
 description = "Clinical reference and global health intelligence MCP server — PubMed, WHO GHO, health statistics, medical literature"
 license = "Apache-2.0"
