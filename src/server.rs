@@ -41,12 +41,13 @@ pub struct CompareInput {
     pub countries: Vec<String>,
 }
 
+#[derive(Clone)]
 pub struct MedicalServer {
     pub pubmed: PubMed,
     pub who_gho: WhoGho,
 }
 
-#[tool_router(server_handler)]
+#[tool_router]
 impl MedicalServer {
     // --- PubMed ---
 
@@ -112,4 +113,11 @@ impl MedicalServer {
             .collect();
         serde_json::to_string_pretty(&indicators).unwrap_or_default()
     }
+}
+
+adk_mcp_sdk::mcp_2026_server! {
+    server: MedicalServer,
+    task_tools: [],
+    approval_tools: [],
+    cache_ttl_ms: 60_000,
 }

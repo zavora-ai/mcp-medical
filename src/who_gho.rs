@@ -4,6 +4,7 @@ use serde_json::Value;
 
 use crate::types::{HealthIndicator, IndicatorMeta};
 
+#[derive(Clone)]
 pub struct WhoGho {
     client: Client,
 }

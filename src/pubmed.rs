@@ -4,6 +4,7 @@ use serde_json::Value;
 
 use crate::types::PubMedArticle;
 
+#[derive(Clone)]
 pub struct PubMed {
     client: Client,
 }
