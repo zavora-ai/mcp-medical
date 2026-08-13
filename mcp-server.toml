@@ -1,16 +1,14 @@
 server_id = "mcp_medical"
 display_name = "Medical"
-version = "1.0.1"
+version = "1.1.0"
 domain = "medical"
-sdk_version = "0.1.0"
+sdk_version = "0.2.0"
 risk_level = "low"
 writes_allowed = "none"
 transports = ["stdio"]
 credentials = []
 governance_gates = []
 environments = ["development", "staging", "production"]
-
-# --- PubMed (2) ---
 
 [[tools]]
 name = "pubmed_search"
@@ -26,18 +24,16 @@ risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
-# --- WHO GHO (5) ---
-
 [[tools]]
 name = "who_get_indicator"
-description = "Get a specific WHO health indicator for a country"
+description = "Get a specific WHO health indicator for a country (e.g. life expectancy, maternal mortality)"
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
 [[tools]]
 name = "who_country_profile"
-description = "Get a comprehensive health profile for a country"
+description = "Get a comprehensive health profile for a country (life expectancy, mortality, disease prevalence, workforce)"
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
